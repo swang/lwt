@@ -1,0 +1,26 @@
+{
+  "name": "lwt",
+  "version": "1.0.0",
+  "description": "light-weight twitter",
+  "main": "t.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swang/lwt.git"
+  },
+  "keywords": [
+    "twitter"
+  ],
+  "author": "Shuan Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swang/lwt/issues"
+  },
+  "homepage": "https://github.com/swang/lwt#readme",
+  "dependencies": {
+    "node-uuid": "^1.4.7",
+    "oauth-sign": "^0.8.2"
+  }
+}
