@@ -22,5 +22,6 @@
   "dependencies": {
     "node-uuid": "^1.4.7",
     "oauth-sign": "^0.8.2"
-  }
+  },
+  "engines" : { "node" : ">=4.0.0" }
 }

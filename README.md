@@ -1,8 +1,8 @@
 # light-weight twitter
-lwt is a light-weight twitter api library. rather than bring in an entire http
-library like `request`, it instead just uses the `oauth-sign` portion of
-`request` and a uuid generator library `node-uuid` to make calls to twitter's
-api.
+lwt is a light-weight twitter api library written in es2015 for node
+verisons >= 4.0.0. rather than bring in an entire http library like `request`,
+it instead just uses the `oauth-sign` portion of `request` and a uuid
+generator library, `node-uuid` to make calls to twitter's api.
 
 # install
 
