@@ -3,14 +3,19 @@
 const uuid = require('node-uuid')
 const https = require('https')
 const qs = require('querystring')
-const { hmacsign, rfc3986 } = require('oauth-sign')
+const oauth = require('oauth-sign')
+const hmacsign = oauth.hmacsign
+const rfc3986 = oauth.rfc3986
 
 module.exports = class T {
   constructor(params) {
     this.hostname = 'api.twitter.com'
     this.ver = '1.1'
 
-    let { accessToken, accessSecret, consumerKey, consumerSecret } = params
+    let accessToken = params.accessToken
+    let accessSecret = params.accessSecret
+    let consumerKey = params.consumerKey
+    let consumerSecret = params.consumerSecret
 
     this.oauth = {
       accessToken,
@@ -48,7 +53,7 @@ module.exports = class T {
   }
 
   tweet(status, callback) {
-    this.post('statuses/update.json', { status }, callback)
+    this.post('statuses/update.json', { status: status }, callback)
   }
 
   get(url, params, callback) {
