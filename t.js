@@ -12,10 +12,11 @@ module.exports = class T {
     this.hostname = 'api.twitter.com'
     this.ver = '1.1'
 
-    let accessToken = params.accessToken
-    let accessSecret = params.accessSecret
-    let consumerKey = params.consumerKey
-    let consumerSecret = params.consumerSecret
+    const ENV = process.env
+    let accessToken = params.accessToken || ENV['T_ACCESS_TOKEN']
+    let accessSecret = params.accessSecret  || ENV['T_ACCESS_SECRET']
+    let consumerKey = params.consumerKey  || ENV['T_CONSUMER_KEY']
+    let consumerSecret = params.consumerSecret || ENV['T_CONSUMER_SECRET']
 
     this.oauth = {
       accessToken,
