@@ -1,6 +1,6 @@
 {
   "name": "lwt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "light-weight twitter",
   "main": "t.js",
   "scripts": {
