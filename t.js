@@ -19,10 +19,10 @@ module.exports = class T {
     let consumerSecret = params.consumerSecret || ENV['T_CONSUMER_SECRET']
 
     this.oauth = {
-      accessToken,
-      accessSecret,
-      consumerKey,
-      consumerSecret
+      accessToken: accessToken,
+      accessSecret: accessSecret,
+      consumerKey: consumerKey,
+      consumerSecret: consumerSecret
     }
   }
 
@@ -96,7 +96,6 @@ module.exports = class T {
       path: `/${this.ver}/${url}${query}`,
       headers
     }
-
     let req = https.request(opts, (res) => {
       let body = ''
       res.on('data', (chunk) => body += chunk)
