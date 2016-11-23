@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/swang/lwt#readme",
   "dependencies": {
-    "node-uuid": "^1.4.7",
-    "oauth-sign": "^0.8.2"
+    "oauth-sign": "^0.8.2",
+    "uuid": "^3.0.0"
   },
-  "engines" : { "node" : ">=4.0.0" }
+  "engines": {
+    "node": ">=4.0.0"
+  }
 }

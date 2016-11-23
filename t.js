@@ -1,6 +1,6 @@
 'use strict';
 
-const uuid = require('node-uuid')
+const uuid = require('uuid')
 const https = require('https')
 const qs = require('querystring')
 const oauth = require('oauth-sign')
