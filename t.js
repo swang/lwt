@@ -96,6 +96,7 @@ module.exports = class T {
       path: `/${this.ver}/${url}${query}`,
       headers
     }
+
     let req = https.request(opts, (res) => {
       let body = ''
       res.on('data', (chunk) => body += chunk)
@@ -105,8 +106,16 @@ module.exports = class T {
       })
     })
 
+    let postBody = qs.stringify(params)
+      .replace(/!/g,'%21')
+      .replace(/\*/g,'%2A')
+      .replace(/\(/g,'%28')
+      .replace(/\)/g,'%29')
+      .replace(/'/g,'%27')
+
     req.on('error', (e) => callback(e))
-    req.write(qs.stringify(params))
+    req.write(postBody)
     req.end();
+
   }
 }
