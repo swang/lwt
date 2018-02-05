@@ -3,9 +3,7 @@
 const uuid = require('uuid')
 const https = require('https')
 const qs = require('querystring')
-const oauth = require('oauth-sign')
-const hmacsign = oauth.hmacsign
-const rfc3986 = oauth.rfc3986
+const { hmacsign, rfc3986 } = require('oauth-sign')
 
 module.exports = class T {
   constructor(params) {
@@ -49,7 +47,7 @@ module.exports = class T {
 
   oauthHeader(oauth) {
     return 'OAuth ' + Object.keys(oauth)
-      .map((o) => o + '=' + '"' + rfc3986(oauth[o]) + '"')
+      .map((o) => `${o}="${rfc3986(oauth[o])}"`)
       .join(', ')
   }
 
